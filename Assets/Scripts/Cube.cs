@@ -139,11 +139,11 @@ public class Cube : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             collision.gameObject.SetActive(false);
-            int count = Waypoint.Count;
+            /*int count = Waypoint.Count;
             for (int i = 0; i < count;i++)
             {
                 removeWaypoint(0);
-            }
+            }*/
         }
     }
 }
