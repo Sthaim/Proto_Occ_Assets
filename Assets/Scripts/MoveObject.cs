@@ -35,7 +35,17 @@ public class MoveObject : MonoBehaviour
             InvokeRepeating("Coroutine", 0F, 0.1F);
         }
         
-}
+    }
+
+    public void callOnMouseDown()
+    {
+        OnMouseDown();
+    }
+
+    public void callOnMouseUp()
+    {
+        OnMouseUp();
+    }
 
     private void OnMouseUp()
     {
@@ -70,9 +80,9 @@ public class MoveObject : MonoBehaviour
         Debug.Log(hits.Length);
         for (int i = 0; i < hits.Length; i++)
         {
-            Debug.Log("Touche plane");
             if (hits[i].collider != null && hits[i].collider.tag == "Plane")
             {
+                Debug.Log("Touche plane");
                 GameObject go = Instantiate(spawnobj, hits[i].point, Quaternion.identity);
                 selectedCube.addWaypoint(go);
                 nbrIteration++;

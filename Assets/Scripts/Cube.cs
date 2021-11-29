@@ -13,10 +13,12 @@ public class Cube : MonoBehaviour
     private int dernierCount;
     private bool moving;
     private Vector3 dernierePos;
+    private GameObject plane;
 
     private void Start()
     {
         prefabLineRend=Instantiate(prefabLineRend, new Vector3(0, 0, 0), Quaternion.identity);
+        plane = GameObject.FindWithTag("Plane");
     }
 
     private void Update()
@@ -65,27 +67,34 @@ public class Cube : MonoBehaviour
 
     private void OnMouseDown()
     {
-        
-        listTag = GameObject.FindGameObjectsWithTag("Selected");
-        foreach (GameObject cube in listTag)
+        plane.GetComponent<MoveObject>().callOnMouseDown();
+        if (gameObject.CompareTag("Untagged"))
         {
-            cube.tag = "Untagged";
-            cube.GetComponent<Renderer>().material.color = Color.white;
-            cube.GetComponent<Cube>().prefabLineRend.SetColors ( Color.white, Color.white);
-            foreach (Renderer variableName in cube.GetComponentsInChildren<Renderer>())
+            listTag = GameObject.FindGameObjectsWithTag("Selected");
+            foreach (GameObject cube in listTag)
             {
-                variableName.material.color = Color.white;
+                cube.tag = "Untagged";
+                cube.GetComponent<Renderer>().material.color = Color.white;
+                cube.GetComponent<Cube>().prefabLineRend.SetColors(Color.white, Color.white);
+                foreach (Renderer variableName in cube.GetComponentsInChildren<Renderer>())
+                {
+                    variableName.material.color = Color.white;
+                }
+            }
+
+            gameObject.tag = "Selected";
+            gameObject.GetComponent<Renderer>().material.color = Color.blue;
+            gameObject.GetComponent<Cube>().prefabLineRend.SetColors(Color.black, Color.green);
+            foreach (Renderer variableName in GetComponentsInChildren<Renderer>())
+            {
+                variableName.material.color = Color.blue;
             }
         }
+    }
 
-        gameObject.tag = "Selected";
-        gameObject.GetComponent<Renderer>().material.color = Color.blue;
-        gameObject.GetComponent<Cube>().prefabLineRend.SetColors(Color.black, Color.green);
-        foreach (Renderer variableName in GetComponentsInChildren<Renderer>())
-        {
-            variableName.material.color = Color.blue;
-        }
-
+    private void OnMouseUp()
+    {
+        plane.GetComponent<MoveObject>().callOnMouseUp();
     }
 
     public void addWaypoint(GameObject gameObj)
