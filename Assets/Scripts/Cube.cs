@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Cube : MonoBehaviour
 {
@@ -132,6 +133,7 @@ public class Cube : MonoBehaviour
         Destroy(Waypoint[index]);
         Waypoint.RemoveAt(index);
     }
+
 
     private void OnTriggerEnter(Collider collision)
     {
