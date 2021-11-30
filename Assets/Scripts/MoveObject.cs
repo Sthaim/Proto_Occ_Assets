@@ -77,12 +77,10 @@ public class MoveObject : MonoBehaviour
     {
         RaycastHit[] hits;
         hits = Physics.RaycastAll(GetMouseWorldPos().origin, GetMouseWorldPos().direction, 100000f);
-        Debug.Log(hits.Length);
         for (int i = 0; i < hits.Length; i++)
         {
             if (hits[i].collider != null && hits[i].collider.tag == "Plane")
             {
-                Debug.Log("Touche plane");
                 GameObject go = Instantiate(spawnobj, hits[i].point, Quaternion.identity);
                 selectedCube.addWaypoint(go);
                 nbrIteration++;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyMov : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class EnemyMov : MonoBehaviour
     public List<GameObject> WaypointsEnemy2;
     public List<GameObject> WaypointsEnemy3;
     public float tempsDeDépart;
+    public NavMeshAgent agent;
+
 
     private List<GameObject> WaypointsEnemy;
 
@@ -21,15 +24,13 @@ public class EnemyMov : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(gameObject.name);
         plane = GameObject.FindWithTag("Plane");
-        Debug.Log(WaypointsListEnemy.Count);
-        Debug.Log("enemie start");
         if (WaypointsEnemy1.Count > 0 && WaypointsEnemy2.Count > 0 && WaypointsEnemy3.Count > 0)
         {
             WaypointsListEnemy.Add(WaypointsEnemy1);
             WaypointsListEnemy.Add(WaypointsEnemy2);
             WaypointsListEnemy.Add(WaypointsEnemy3);
-            Debug.Log(Random.Range(0, 3));
             WaypointsEnemy = WaypointsListEnemy[Random.Range(0, 3)];
         }
         
@@ -40,12 +41,26 @@ public class EnemyMov : MonoBehaviour
 
     public void StartMovement()
     {
+        GameObject[] listTag; 
+        listTag = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in listTag)
+        {
+            if (enemy)
+            {
+                enemy.GetComponent<EnemyMov>().go();
+            }
+        }
+    }
+
+    public void go()
+    {
         StartCoroutine("StartingMovement");
     }
 
     IEnumerator StartingMovement()
     {
         yield return new WaitForSeconds(tempsDeDépart);
+        newDestination();
         movingNow = true;
     }
 
@@ -57,6 +72,11 @@ public class EnemyMov : MonoBehaviour
     private void OnMouseUp()
     {
         plane.GetComponent<MoveObject>().callOnMouseUp();
+    }
+
+    private void newDestination()
+    {
+        agent.SetDestination(WaypointsEnemy[indexTarget].transform.position);
     }
 
     // Update is called once per frame
@@ -71,13 +91,14 @@ public class EnemyMov : MonoBehaviour
                 var rotation = Quaternion.LookRotation(lookPos);
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 10);
 
-                gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, WaypointsEnemy[indexTarget].transform.position, Time.deltaTime * 50f);
+                /*gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, WaypointsEnemy[indexTarget].transform.position, Time.deltaTime * 1f);*/
 
-                if (Vector3.Distance(gameObject.transform.position, WaypointsEnemy[indexTarget].transform.position) < 10)
+                if (Vector3.Distance(gameObject.transform.position, WaypointsEnemy[indexTarget].transform.position) < 0.5)
                 {
                     if (indexTarget < WaypointsEnemy.Count-1)
                     {
                         indexTarget++;
+                        newDestination();
                     }
                 }
             }

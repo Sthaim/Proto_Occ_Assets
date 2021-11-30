@@ -32,21 +32,20 @@ public class Cube : MonoBehaviour
             var rotation = Quaternion.LookRotation(lookPos);
             transform.rotation=Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 10);
 
-            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, offsetPos, Time.deltaTime * 50f);
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, offsetPos, Time.deltaTime * 1f);
 
             if (gameObject.transform.position== dernierePos)
             {
                 moving = false;
             }
             
-            if (Vector3.Distance(gameObject.transform.position, offsetPos)<10)
+            if (Vector3.Distance(gameObject.transform.position, offsetPos)<0.5)
             {
                 removeWaypoint(0);
             }
         }
         if (nbrIte == 2 && Waypoint.Count > 2 && moving == true)
         {
-            Debug.Log("SupprDerniereLigne");
             int count = Waypoint.Count;
             for (int i = 0; i < count-2; i++)
             {
