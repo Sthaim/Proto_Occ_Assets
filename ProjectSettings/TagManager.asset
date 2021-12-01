@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Plane
-  - Enemy
   - Selected
+  - Enemy
   layers:
   - Default
   - TransparentFX
