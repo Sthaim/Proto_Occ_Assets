@@ -127,8 +127,9 @@ public class Menu1 : MonoBehaviour
                 fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
                 objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
                 secondText.color = objectColor;
-                yield return finishedAppear = true;
+                yield return null;
             }
+            finishedAppear = true;
         }
         else
         {

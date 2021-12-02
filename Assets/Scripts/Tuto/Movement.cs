@@ -88,6 +88,7 @@ public class Movement : MonoBehaviour
         if (nbrIte > 2)
         {
             moving = true;
+            UI.GetComponent<Menu1>().startCoroutine(UI.GetComponent<Menu1>().thirdTextAppear, false, 1);
         }
     }
 

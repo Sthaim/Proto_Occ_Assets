@@ -81,16 +81,13 @@ public class PlaneMov : MonoBehaviour
         hits = Physics.RaycastAll(GetMouseWorldPos().origin, GetMouseWorldPos().direction, 100000f);
         for (int i = 0; i < hits.Length; i++)
         {
-            Debug.Log("Last Hit: " + lastHit);
             if (hits[i].collider != null && hits[i].collider.tag == "Plane" && lastHit != hits[i].point)
             {
-                Debug.Log("Last Hit début de for: " + lastHit);
                 nbrIteration++;
                 selectedCube.UpdateIteration(nbrIteration);
                 GameObject go = Instantiate(spawnobj, hits[i].point, Quaternion.identity);
                 selectedCube.addWaypoint(go);
                 lastHit = hits[i].point;
-                Debug.Log("Hit point: " + hits[i].point);
             }
         }
 
