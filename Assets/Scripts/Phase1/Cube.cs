@@ -30,9 +30,12 @@ public class Cube : MonoBehaviour
 
             var lookPos = offsetPos - transform.position;
             lookPos.y = 0;
-            var rotation = Quaternion.LookRotation(lookPos);
-            transform.rotation=Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 10);
-
+            if (lookPos == Vector3.zero ) { }
+            else
+            {
+                var rotation = Quaternion.LookRotation(lookPos);
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 10);
+            }
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, offsetPos, Time.deltaTime * 1f);
 
             if (gameObject.transform.position== dernierePos)
@@ -87,6 +90,7 @@ public class Cube : MonoBehaviour
             gameObject.GetComponent<Cube>().prefabLineRend.SetColors(Color.black, Color.green);
             foreach (Renderer variableName in GetComponentsInChildren<Renderer>())
             {
+                variableName.material.color = Color.blue;
                 variableName.material.color = Color.blue;
             }
         }

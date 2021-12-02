@@ -24,7 +24,6 @@ public class EnemyMov : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(gameObject.name);
         plane = GameObject.FindWithTag("Plane");
         if (WaypointsEnemy1.Count > 0 && WaypointsEnemy2.Count > 0 && WaypointsEnemy3.Count > 0)
         {
@@ -88,14 +87,15 @@ public class EnemyMov : MonoBehaviour
             {
                 var lookPos = WaypointsEnemy[indexTarget].transform.position - transform.position;
                 lookPos.y = 0;
-                var rotation = Quaternion.LookRotation(lookPos);
-                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 10);
-
-                /*gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, WaypointsEnemy[indexTarget].transform.position, Time.deltaTime * 1f);*/
-
+                if (lookPos == Vector3.zero) { }
+                else
+                {
+                    var rotation = Quaternion.LookRotation(lookPos);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 10);
+                }
                 if (Vector3.Distance(gameObject.transform.position, WaypointsEnemy[indexTarget].transform.position) < 0.5)
                 {
-                    if (indexTarget < WaypointsEnemy.Count-1)
+                    if (indexTarget < WaypointsEnemy.Count - 1)
                     {
                         indexTarget++;
                         newDestination();
