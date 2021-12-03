@@ -38,9 +38,8 @@ public class Movement : MonoBehaviour
                 variableName.material.color = Color.blue;
                 variableName.material.color = Color.blue;
             }
-            UI.GetComponent<Menu1>().startCoroutine(UI.GetComponent<Menu1>().firstTextAppear, false, 1);
-            UI.GetComponent<Menu1>().startCoroutine(UI.GetComponent<Menu1>().secondTextAppear, false, 1);
-            UI.GetComponent<Menu1>().startCoroutine(UI.GetComponent<Menu1>().thirdTextAppear, true, 1);
+            UI.GetComponent<Menu1>().DelayText(UI.GetComponent<Menu1>().myTextMeshTop, 0.1f, 1);
+            UI.GetComponent<Menu1>().DelayText(UI.GetComponent<Menu1>().myTextMeshBottom, 0.1f, 1);
         }
     }
 
@@ -52,6 +51,10 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (UI.GetComponent<Menu1>().myTextMeshTop.color.a == 1)
+        {
+            UI.GetComponent<Menu1>().finishedAppear = true;
+        }
         if (Waypoint.Count > 0 && dernierCount > 0)
         {
             offsetPos = new Vector3(Waypoint[0].transform.position.x, Waypoint[0].transform.position.y + Offset, Waypoint[0].transform.position.z);
@@ -88,7 +91,8 @@ public class Movement : MonoBehaviour
         if (nbrIte > 2)
         {
             moving = true;
-            UI.GetComponent<Menu1>().startCoroutine(UI.GetComponent<Menu1>().thirdTextAppear, false, 1);
+            UI.GetComponent<Menu1>().DelayText(UI.GetComponent<Menu1>().myTextMeshTop, 0.1f, 1);
+            UI.GetComponent<Menu1>().DelayText(UI.GetComponent<Menu1>().myTextMeshBottom, 0.1f, 1);
         }
     }
 

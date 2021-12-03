@@ -10,15 +10,17 @@ public class Menu1 : MonoBehaviour
 
     public GameObject blackOutSquare;
 
-    public TextMeshProUGUI firstText;
-    public TextMeshProUGUI secondText;
-    public TextMeshProUGUI thirdText;
+    public string[] myTextesTop;
+    public int indexMyTextesTop;
+    public string[] myTextesBottom;
+    public int indexMyTextesBottom;
+    public TextMeshProUGUI myTextMeshTop;
+    public TextMeshProUGUI myTextMeshBottom;
+
+    public enum Positions { NULL = 0, TOP = 1, BOTTOM = 2 }
 
     public delegate IEnumerator TestDelegate(bool test, int Speed); // This defines what type of method you're going to call.
     public TestDelegate BlackFade;
-    public TestDelegate firstTextAppear;
-    public TestDelegate secondTextAppear;
-    public TestDelegate thirdTextAppear;
 
     public bool finishedAppear;
 
@@ -26,17 +28,23 @@ public class Menu1 : MonoBehaviour
     void Start()
     {
         finishedAppear = false;
-        firstText.color = new Color(firstText.color.r, firstText.color.g, firstText.color.b, 0);
-        secondText.color = new Color(firstText.color.r, firstText.color.g, firstText.color.b, 0);
-        thirdText.color = new Color(firstText.color.r, firstText.color.g, firstText.color.b, 0);
+        myTextMeshTop.color = new Color(myTextMeshTop.color.r, myTextMeshTop.color.g, myTextMeshTop.color.b, 0);
+        myTextMeshBottom.color = new Color(myTextMeshBottom.color.r, myTextMeshBottom.color.g, myTextMeshBottom.color.b, 0);
         blackOutSquare.GetComponent<Image>().color = new Color(blackOutSquare.GetComponent<Image>().color.r, blackOutSquare.GetComponent<Image>().color.g, blackOutSquare.GetComponent<Image>().color.b, 1);
-        BlackFade = FadeBlackOutSquare;
-        firstTextAppear = TutoTextAppear;
-        secondTextAppear = TutoText2Appear;
-        thirdTextAppear = TutoText3Appear;
-        startCoroutine(BlackFade,false,1);
-        startCoroutine(firstTextAppear, true, 1);
-        startCoroutine(secondTextAppear, true, 1);
+        StartCoroutine(FadeBlackOutSquare());
+
+        // TEXT TOP
+        // On place le texte top
+        SetTextOnTMP(myTextMeshTop, Positions.TOP);
+        // On affiche le texte top
+        DelayText(myTextMeshTop, 0.01f);
+
+        // TEXT BOTTOM
+        // On place le texte top
+        SetTextOnTMP(myTextMeshBottom, Positions.BOTTOM);
+        // On affiche le texte top
+        DelayText(myTextMeshBottom, 0.01f);
+
     }
 
     private void Update()
@@ -44,12 +52,8 @@ public class Menu1 : MonoBehaviour
         
     }
 
-    public void startCoroutine(TestDelegate functionTest, bool appear, int vitesse)
-    {
-        StartCoroutine(functionTest(appear, vitesse));
-    }
 
-    public IEnumerator FadeBlackOutSquare(bool fadeToBlack = true, int fadeSpeed = 1)
+    public IEnumerator FadeBlackOutSquare(bool fadeToBlack = false, int fadeSpeed = 1)
     { 
 
         Color objectColor = blackOutSquare.GetComponent<Image>().color;
@@ -78,100 +82,86 @@ public class Menu1 : MonoBehaviour
         }
     }
 
-    private IEnumerator TutoTextAppear (bool fadeToExsistence = true, int fadeSpeed = 1)
+    // SET TEXT
+    public void SetTextOnTMP(TextMeshProUGUI _TMP, Positions _pos)
     {
-        Color objectColor = firstText.color;
-
-        float fadeAmount;
-
-        
-
-        if (fadeToExsistence)
+        if (_pos == Positions.TOP)
         {
-            yield return new WaitForSeconds(2.5f);
-            while (firstText.color.a < 1)
+            if (indexMyTextesTop < myTextesTop.Length)
             {
-
-                fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
-                objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
-                firstText.color = objectColor;
-                yield return null;
+                _TMP.text = myTextesTop[indexMyTextesTop];
+                indexMyTextesTop++;
             }
         }
-        else
+
+        else if (_pos == Positions.BOTTOM)
         {
-            while (firstText.color.a > 0)
+            if (indexMyTextesBottom < myTextesBottom.Length)
             {
-                fadeAmount = objectColor.a - (fadeSpeed * Time.deltaTime);
-                objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
-                firstText.color = objectColor;
-                yield return null;
+                _TMP.text = myTextesBottom[indexMyTextesBottom];
+                indexMyTextesBottom++;
             }
         }
     }
 
-    private IEnumerator TutoText2Appear(bool fadeToExsistence = true, int fadeSpeed = 1)
+    // FADE
+    public void FadeInText(TextMeshProUGUI _TMP, float _s = 1f)
     {
-        Color objectColor = secondText.color;
+        StartCoroutine(FadeInTextCoroutine(_TMP, _s));
+    }
+    public void FadeOutText(TextMeshProUGUI _TMP, float _s = 1f)
+    {
+        StartCoroutine(FadeOutTextCoroutine(_TMP, _s));
+        print("hidsoh");
+    }
 
-        float fadeAmount;
-
-        
-
-        if (fadeToExsistence)
+    IEnumerator FadeInTextCoroutine(TextMeshProUGUI _TMP, float _s)
+    {
+        yield return new WaitForSeconds(_s);
+        print("FadeIn");
+        // Ajout de l'alpha au texte
+        _TMP.color = new Color(_TMP.color.r, _TMP.color.g, _TMP.color.b, _TMP.color.a + 0.01f);
+        if (_TMP.color.a >= 0.95)
         {
-            yield return new WaitForSeconds(5f);
-            while (secondText.color.a < 1)
-            {
-
-                fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
-                objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
-                secondText.color = objectColor;
-                yield return null;
-            }
-            finishedAppear = true;
+            print("Stop money");
+            StopCoroutine(FadeInTextCoroutine(_TMP, _s));
+            _TMP.color = new Color(_TMP.color.r, _TMP.color.g, _TMP.color.b, 1);
         }
         else
         {
-            while (secondText.color.a > 0)
-            {
-                fadeAmount = objectColor.a - (fadeSpeed * Time.deltaTime);
-                objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
-                secondText.color = objectColor;
-                yield return null;
-            }
+            StartCoroutine(FadeInTextCoroutine(_TMP, _s));
         }
     }
-
-    private IEnumerator TutoText3Appear(bool fadeToExsistence = true, int fadeSpeed = 1)
+    IEnumerator FadeOutTextCoroutine(TextMeshProUGUI _TMP, float _s)
     {
-        Color objectColor = thirdText.color;
-
-        float fadeAmount;
-
-        if (fadeToExsistence)
+        yield return new WaitForSeconds(_s);
+        print("FadeOut");
+        // Ajout de l'alpha au texte
+        _TMP.color = new Color(_TMP.color.r, _TMP.color.g, _TMP.color.b, _TMP.color.a - 0.05f);
+        if (_TMP.color.a <= 0)
         {
-            yield return new WaitForSeconds(2f);
-            while (thirdText.color.a < 1)
-            {
-
-                fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
-                objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
-                thirdText.color = objectColor;
-                yield return finishedAppear = true;
-            }
+            print("Stop money Out");
+            StopCoroutine(FadeOutTextCoroutine(_TMP, _s));
         }
         else
         {
-            yield return new WaitForSeconds(2f);
-            while (thirdText.color.a > 0)
-            {
-                fadeAmount = objectColor.a - (fadeSpeed * Time.deltaTime);
-                objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
-                thirdText.color = objectColor;
-                yield return null;
-            }
+            StartCoroutine(FadeOutTextCoroutine(_TMP, _s));
         }
     }
-    // Update is called once per frame
+    public void DelayText(TextMeshProUGUI _TMP, float _s, float _delay = 1, bool _fadeIn = true)
+    {
+        StartCoroutine(DelayTextCoroutine(_TMP, _s, _delay, _fadeIn));
+    }
+    IEnumerator DelayTextCoroutine(TextMeshProUGUI _TMP, float _s, float _delay = 1, bool _fadeIn = true)
+    {
+        yield return new WaitForSeconds(_delay);
+        if (_fadeIn)
+        {
+            FadeInText(_TMP, _s);
+        }
+        else
+        {
+            FadeOutText(_TMP, _s);
+        }
+    }
 }
