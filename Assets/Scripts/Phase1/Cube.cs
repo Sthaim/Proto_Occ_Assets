@@ -15,11 +15,14 @@ public class Cube : MonoBehaviour
     private bool moving;
     private Vector3 dernierePos;
     private GameObject plane;
+    private GameObject go_gameController;
 
     private void Start()
     {
         prefabLineRend=Instantiate(prefabLineRend, new Vector3(0, 0, 0), Quaternion.identity);
         plane = GameObject.FindWithTag("Plane");
+        go_gameController = GameObject.FindGameObjectWithTag("GameController");
+        
     }
 
     private void Update()
@@ -63,9 +66,9 @@ public class Cube : MonoBehaviour
 
     }
 
-    public void UpdateIteration( int ite)
+    public void UpdateIteration( int _ite)
     {
-        nbrIte = ite;
+        nbrIte = _ite;
     }
 
     private void OnMouseDown()
@@ -101,10 +104,10 @@ public class Cube : MonoBehaviour
         plane.GetComponent<MoveObject>().callOnMouseUp();
     }
 
-    public void addWaypoint(GameObject gameObj)
+    public void addWaypoint(GameObject _gameObj)
     {
         dernierCount = Waypoint.Count;
-        Waypoint.Add(gameObj);
+        Waypoint.Add(_gameObj);
         prefabLineRend.positionCount = Waypoint.Count;
         for(int i = 0; i < prefabLineRend.positionCount; i++)
         {
@@ -112,19 +115,19 @@ public class Cube : MonoBehaviour
         }
     }
 
-    public void removeWaypoint(int index)
+    public void removeWaypoint(int _index)
     {
        
         dernierCount = Waypoint.Count;
         Vector3[] newPositions = new Vector3[prefabLineRend.positionCount - 1];
 
-        for (int i = 0; i < index; i++)
+        for (int i = 0; i < _index; i++)
         {
             newPositions[i] = prefabLineRend.GetPosition(i);
 
 
         }
-        for (int i = index; i < newPositions.Length; i++)
+        for (int i = _index; i < newPositions.Length; i++)
         {
             newPositions[i] = prefabLineRend.GetPosition(i + 1);
 
@@ -133,22 +136,19 @@ public class Cube : MonoBehaviour
         prefabLineRend.positionCount=newPositions.Length;
         prefabLineRend.SetPositions(newPositions);
 
-        Waypoint[index].SetActive(false);
-        Destroy(Waypoint[index]);
-        Waypoint.RemoveAt(index);
+        Waypoint[_index].SetActive(false);
+        Destroy(Waypoint[_index]);
+        Waypoint.RemoveAt(_index);
     }
 
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter(Collider _collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (_collision.gameObject.CompareTag("Enemy"))
         {
-            collision.gameObject.SetActive(false);
-            /*int count = Waypoint.Count;
-            for (int i = 0; i < count;i++)
-            {
-                removeWaypoint(0);
-            }*/
+            _collision.gameObject.SetActive(false);
+            go_gameController.GetComponent<Phase1Manager>().removeEnemyAlive();
+            go_gameController.GetComponent<Phase1Manager>().addScore();
         }
     }
 }

@@ -16,6 +16,7 @@ public class Menu1 : MonoBehaviour
     public int indexMyTextesBottom;
     public TextMeshProUGUI myTextMeshTop;
     public TextMeshProUGUI myTextMeshBottom;
+    public GameObject Enemy;
 
     public enum Positions { NULL = 0, TOP = 1, BOTTOM = 2 }
 
@@ -27,11 +28,12 @@ public class Menu1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Enemy.SetActive(false);
         finishedAppear = false;
         myTextMeshTop.color = new Color(myTextMeshTop.color.r, myTextMeshTop.color.g, myTextMeshTop.color.b, 0);
-        myTextMeshBottom.color = new Color(myTextMeshBottom.color.r, myTextMeshBottom.color.g, myTextMeshBottom.color.b, 0);
+        myTextMeshBottom.color = new Color(myTextMeshBottom.color.r, myTextMeshBottom.color.g, myTextMeshBottom.color.b, 0.01f);
         blackOutSquare.GetComponent<Image>().color = new Color(blackOutSquare.GetComponent<Image>().color.r, blackOutSquare.GetComponent<Image>().color.g, blackOutSquare.GetComponent<Image>().color.b, 1);
-        StartCoroutine(FadeBlackOutSquare());
+        StartCoroutine(FadeBlackOutSquare(false));
 
         // TEXT TOP
         // On place le texte top
@@ -43,7 +45,7 @@ public class Menu1 : MonoBehaviour
         // On place le texte top
         SetTextOnTMP(myTextMeshBottom, Positions.BOTTOM);
         // On affiche le texte top
-        DelayText(myTextMeshBottom, 0.01f);
+        DelayText(myTextMeshBottom, 0.01f,2);
 
     }
 
@@ -70,6 +72,7 @@ public class Menu1 : MonoBehaviour
                 blackOutSquare.GetComponent<Image>().color = objectColor;
                 yield return null;
             }
+            SceneManager.LoadScene("Phase1");
         } else
         {
             while (blackOutSquare.GetComponent<Image>().color.a > 0)
@@ -112,7 +115,6 @@ public class Menu1 : MonoBehaviour
     public void FadeOutText(TextMeshProUGUI _TMP, float _s = 1f)
     {
         StartCoroutine(FadeOutTextCoroutine(_TMP, _s));
-        print("hidsoh");
     }
 
     IEnumerator FadeInTextCoroutine(TextMeshProUGUI _TMP, float _s)
@@ -142,6 +144,7 @@ public class Menu1 : MonoBehaviour
         {
             print("Stop money Out");
             StopCoroutine(FadeOutTextCoroutine(_TMP, _s));
+            _TMP.color = new Color(_TMP.color.r, _TMP.color.g, _TMP.color.b, 0);
         }
         else
         {

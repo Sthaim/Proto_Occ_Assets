@@ -52,12 +52,12 @@ public class RondeEnemy : MonoBehaviour
 
     private void OnMouseDown()
     {
-        plane.GetComponent<MoveObject>().callOnMouseDown();
+        plane.GetComponent<DéplacementSol>().callOnMouseDown();
     }
 
     private void OnMouseUp()
     {
-        plane.GetComponent<MoveObject>().callOnMouseUp();
+        plane.GetComponent<DéplacementSol>().callOnMouseUp();
     }
 
     private void newDestination()

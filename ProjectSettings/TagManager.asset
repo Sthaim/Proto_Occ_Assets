@@ -8,6 +8,7 @@ TagManager:
   - Selected
   - Enemy
   - UI
+  - Despawners
   layers:
   - Default
   - TransparentFX

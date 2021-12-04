@@ -20,11 +20,13 @@ public class EnemyMov : MonoBehaviour
     private bool movingNow;
     private int indexTarget;
     private GameObject plane;
+    private GameObject go_gameController;
 
     // Start is called before the first frame update
     void Start()
     {
         plane = GameObject.FindWithTag("Plane");
+        go_gameController = GameObject.FindWithTag("GameController");
         if (WaypointsEnemy1.Count > 0 && WaypointsEnemy2.Count > 0 && WaypointsEnemy3.Count > 0)
         {
             WaypointsListEnemy.Add(WaypointsEnemy1);
@@ -104,6 +106,16 @@ public class EnemyMov : MonoBehaviour
             }
 
            
+        }
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Despawners"))
+        {
+            gameObject.SetActive(false);
+            go_gameController.GetComponent<Phase1Manager>().removeEnemyAlive();
+            
         }
     }
 }

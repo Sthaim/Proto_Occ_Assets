@@ -6,12 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: "Assets/Scenes/D\xE9part.unity"
+    guid: b648a98a3b5136445a4e54022bae6c49
+  - enabled: 1
+    path: Assets/Scenes/Tuto.unity
+    guid: 59d5466a374928742992e50d700277c2
+  - enabled: 1
     path: Assets/Scenes/Phase1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Phase2.unity
     guid: f7ed63268064a2f46a69476cb85c7577
-  - enabled: 1
-    path: Assets/Scenes/Tuto.unity
-    guid: 59d5466a374928742992e50d700277c2
   m_configObjects: {}

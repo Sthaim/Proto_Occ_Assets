@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Movement : MonoBehaviour
     private int nbrIte;
     private int dernierCount;
     private bool moving;
+    private bool premierTexte;
+    private bool lastTexte;
     private Vector3 dernierePos;
     private GameObject plane;
     private GameObject UI;
@@ -22,6 +25,8 @@ public class Movement : MonoBehaviour
         prefabLineRend = Instantiate(prefabLineRend, new Vector3(0, 0, 0), Quaternion.identity);
         plane = GameObject.FindWithTag("Plane");
         UI = GameObject.FindWithTag("UI");
+        premierTexte = false;
+        lastTexte = false;
     }
 
     private void OnMouseDown()
@@ -38,8 +43,20 @@ public class Movement : MonoBehaviour
                 variableName.material.color = Color.blue;
                 variableName.material.color = Color.blue;
             }
-            UI.GetComponent<Menu1>().DelayText(UI.GetComponent<Menu1>().myTextMeshTop, 0.1f, 1);
-            UI.GetComponent<Menu1>().DelayText(UI.GetComponent<Menu1>().myTextMeshBottom, 0.1f, 1);
+            if (premierTexte == false)
+            {
+                UI.GetComponent<Menu1>().DelayText(UI.GetComponent<Menu1>().myTextMeshTop, 0.01f, 0, false);
+                UI.GetComponent<Menu1>().DelayText(UI.GetComponent<Menu1>().myTextMeshBottom, 0.01f, 0, false);
+                UI.GetComponent<Menu1>().SetTextOnTMP(UI.GetComponent<Menu1>().myTextMeshBottom, Menu1.Positions.BOTTOM);
+                UI.GetComponent<Menu1>().DelayText(UI.GetComponent<Menu1>().myTextMeshBottom, 0.01f, 1, true);
+
+                premierTexte = true;
+            }
+                
+
+            /*UI.GetComponent<Menu1>().SetTextOnTMP(UI.GetComponent<Menu1>().myTextMeshTop, Menu1.Positions.TOP);*/
+            /*UI.GetComponent<Menu1>().SetTextOnTMP(UI.GetComponent<Menu1>().myTextMeshBottom, Menu1.Positions.BOTTOM);
+            UI.GetComponent<Menu1>().DelayText(UI.GetComponent<Menu1>().myTextMeshBottom, 0.01f, 1, true);*/
         }
     }
 
@@ -77,6 +94,14 @@ public class Movement : MonoBehaviour
 
             if (Vector3.Distance(gameObject.transform.position, offsetPos) < 0.5)
             {
+                if (!lastTexte)
+                {
+                    UI.GetComponent<Menu1>().DelayText(UI.GetComponent<Menu1>().myTextMeshBottom, 0.01f, 0, false);
+                    UI.GetComponent<Menu1>().SetTextOnTMP(UI.GetComponent<Menu1>().myTextMeshBottom, Menu1.Positions.BOTTOM);
+                    UI.GetComponent<Menu1>().DelayText(UI.GetComponent<Menu1>().myTextMeshBottom, 0.01f, 1, true);
+                    UI.GetComponent<Menu1>().Enemy.SetActive(true);
+                    lastTexte = true;
+                }
                 removeWaypoint(0);
             }
         }
@@ -91,9 +116,20 @@ public class Movement : MonoBehaviour
         if (nbrIte > 2)
         {
             moving = true;
-            UI.GetComponent<Menu1>().DelayText(UI.GetComponent<Menu1>().myTextMeshTop, 0.1f, 1);
-            UI.GetComponent<Menu1>().DelayText(UI.GetComponent<Menu1>().myTextMeshBottom, 0.1f, 1);
+            /* UI.GetComponent<Menu1>().DelayText(UI.GetComponent<Menu1>().myTextMeshBottom, 0.1f, 1,false);*/
+            
         }
+
+        if (UI.GetComponent<Menu1>().myTextMeshBottom.color.a == 0)
+        {
+
+        }
+        /*else if (UI.GetComponent<Menu1>().indexMyTextesBottom == 2 && UI.GetComponent<Menu1>().myTextMeshBottom.color.a == 0)
+        {
+            UI.GetComponent<Menu1>().SetTextOnTMP(UI.GetComponent<Menu1>().myTextMeshBottom, Menu1.Positions.BOTTOM);
+            UI.GetComponent<Menu1>().DelayText(UI.GetComponent<Menu1>().myTextMeshBottom, 0.01f, 1, true);
+        }*/
+
     }
 
     public void addWaypoint(GameObject gameObj)
@@ -122,8 +158,6 @@ public class Movement : MonoBehaviour
         for (int i = index; i < newPositions.Length; i++)
         {
             newPositions[i] = prefabLineRend.GetPosition(i + 1);
-
-
         }
         prefabLineRend.positionCount = newPositions.Length;
         prefabLineRend.SetPositions(newPositions);
@@ -143,6 +177,7 @@ public class Movement : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             collision.gameObject.SetActive(false);
+            StartCoroutine(UI.GetComponent<Menu1>().FadeBlackOutSquare(true));
         }
     }
 }

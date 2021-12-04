@@ -15,9 +15,12 @@ public class DeplacementFuite : MonoBehaviour
     private bool moving;
     private Vector3 dernierePos;
     private GameObject plane;
+    private GameObject go_gameController;
+
 
     private void Start()
     {
+        go_gameController = GameObject.FindWithTag("GameController");
         prefabLineRender = Instantiate(prefabLineRender, new Vector3(0, 0, 0), Quaternion.identity);
         plane = GameObject.FindWithTag("Plane");
     }
@@ -69,12 +72,12 @@ public class DeplacementFuite : MonoBehaviour
     private void OnMouseDown()
     {
         plane.GetComponent<DéplacementSol>().callOnMouseDown();
-        if (gameObject.CompareTag("Untagged"))
+        if (gameObject.CompareTag("Player"))
         {
             listTag = GameObject.FindGameObjectsWithTag("Selected");
             foreach (GameObject cube in listTag)
             {
-                cube.tag = "Untagged";
+                cube.tag = "Player";
                 cube.GetComponent<Renderer>().material.color = Color.white;
                 cube.GetComponent<DeplacementFuite>().prefabLineRender.SetColors(Color.white, Color.white);
                 foreach (Renderer variableName in cube.GetComponentsInChildren<Renderer>())
@@ -132,12 +135,21 @@ public class DeplacementFuite : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter(Collider _collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (_collision.gameObject.CompareTag("Enemy")|| _collision.gameObject.CompareTag("Despawners"))
         {
+            int count = Waypoint.Count;
+            for (int i = 0; i < count-2; i++)
+            {
+                removeWaypoint(0);
+            }
+            print("touched");
             gameObject.SetActive(false);
+            go_gameController.GetComponent<Phase2Manager>().removeEnemyAlive();
         }
+
+
     }
 }
 

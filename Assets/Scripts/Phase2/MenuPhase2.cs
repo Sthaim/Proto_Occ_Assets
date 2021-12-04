@@ -1,21 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Menu : MonoBehaviour
+public class MenuPhase2 : MonoBehaviour
 {
     public GameObject blackOutSquare;
-    public GameObject go_texteFinDePhase;
+    public GameObject go_secondTexte;
 
     // Start is called before the first frame update
     void Start()
     {
-        go_texteFinDePhase.SetActive(false);
         blackOutSquare.GetComponent<Image>().color = new Color(blackOutSquare.GetComponent<Image>().color.r, blackOutSquare.GetComponent<Image>().color.g, blackOutSquare.GetComponent<Image>().color.b, 1);
         startCoroutine(false);
+        go_secondTexte.SetActive(false);
+        
     }
 
     private void Update()
@@ -43,8 +43,7 @@ public class Menu : MonoBehaviour
                 StopCoroutine(FadeBlackOutSquare(false, 0.01f));
                 blackOutSquare.GetComponent<Image>().color = new Color(blackOutSquare.GetComponent<Image>().color.r, blackOutSquare.GetComponent<Image>().color.g, blackOutSquare.GetComponent<Image>().color.b, 1);
                 yield return new WaitForSeconds(2);
-                go_texteFinDePhase.SetActive(true);
-                GetComponent<Phase1Manager>().tmp_nbrEnemy.color = GetComponent<Phase1Manager>().tmp_nbrEnemy.color = new Color(255, 255, 255, 0);
+                go_secondTexte.SetActive(true);
             }
             else
             {
@@ -62,7 +61,6 @@ public class Menu : MonoBehaviour
                 StopCoroutine(FadeBlackOutSquare(false, 0.01f));
                 blackOutSquare.GetComponent<Image>().color = new Color(blackOutSquare.GetComponent<Image>().color.r, blackOutSquare.GetComponent<Image>().color.g, blackOutSquare.GetComponent<Image>().color.b, 0);
                 yield return new WaitForSeconds(3);
-                GetComponent<Phase1Manager>().tmp_nbrEnemy.color = GetComponent<Phase1Manager>().tmp_nbrEnemy.color = new Color(255, 255, 255, 1);
             }
             else
             {
