@@ -17,6 +17,7 @@ public class Menu1 : MonoBehaviour
     public TextMeshProUGUI myTextMeshTop;
     public TextMeshProUGUI myTextMeshBottom;
     public GameObject Enemy;
+    public GameObject go_hand;
 
     public enum Positions { NULL = 0, TOP = 1, BOTTOM = 2 }
 
@@ -81,6 +82,8 @@ public class Menu1 : MonoBehaviour
                 objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
                 blackOutSquare.GetComponent<Image>().color = objectColor;
                 yield return null;
+                go_hand.GetComponent<HandMovement>().handAppear();
+                go_hand.GetComponent<HandMovement>().handSelect();
             }
         }
     }

@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class HandMovement : MonoBehaviour
 {
+    public Animator a_handAnim;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameObject.SetActive(false);
+        handSelect();
     }
 
     public void handAppear()
@@ -17,9 +19,13 @@ public class HandMovement : MonoBehaviour
 
     public void handSelect()
     {
-    /*    gameObject.transform.eulerAngles();*/
+        a_handAnim.SetTrigger("isSelecting");
     }
 
+    public void handGlisse()
+    {
+        a_handAnim.SetTrigger("isGlisse");
+    }
     // Update is called once per frame
     void Update()
     {

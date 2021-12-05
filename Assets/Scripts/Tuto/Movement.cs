@@ -18,6 +18,7 @@ public class Movement : MonoBehaviour
     private Vector3 dernierePos;
     private GameObject plane;
     private GameObject UI;
+    public GameObject go_hand;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +50,7 @@ public class Movement : MonoBehaviour
                 UI.GetComponent<Menu1>().DelayText(UI.GetComponent<Menu1>().myTextMeshBottom, 0.01f, 0, false);
                 UI.GetComponent<Menu1>().SetTextOnTMP(UI.GetComponent<Menu1>().myTextMeshBottom, Menu1.Positions.BOTTOM);
                 UI.GetComponent<Menu1>().DelayText(UI.GetComponent<Menu1>().myTextMeshBottom, 0.01f, 1, true);
+                go_hand.GetComponent<HandMovement>().handGlisse();
 
                 premierTexte = true;
             }
@@ -94,12 +96,13 @@ public class Movement : MonoBehaviour
 
             if (Vector3.Distance(gameObject.transform.position, offsetPos) < 0.5)
             {
-                if (!lastTexte)
+                if (!lastTexte && nbrIte > 2)
                 {
                     UI.GetComponent<Menu1>().DelayText(UI.GetComponent<Menu1>().myTextMeshBottom, 0.01f, 0, false);
                     UI.GetComponent<Menu1>().SetTextOnTMP(UI.GetComponent<Menu1>().myTextMeshBottom, Menu1.Positions.BOTTOM);
                     UI.GetComponent<Menu1>().DelayText(UI.GetComponent<Menu1>().myTextMeshBottom, 0.01f, 1, true);
                     UI.GetComponent<Menu1>().Enemy.SetActive(true);
+                    go_hand.SetActive(false);
                     lastTexte = true;
                 }
                 removeWaypoint(0);

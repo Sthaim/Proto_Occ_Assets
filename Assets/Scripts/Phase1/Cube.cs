@@ -16,6 +16,7 @@ public class Cube : MonoBehaviour
     private Vector3 dernierePos;
     private GameObject plane;
     private GameObject go_gameController;
+    public Animator a_halo;
 
     private void Start()
     {
@@ -80,6 +81,7 @@ public class Cube : MonoBehaviour
             foreach (GameObject cube in listTag)
             {
                 cube.tag = "Untagged";
+                cube.GetComponent<Cube>().a_halo.SetTrigger("MovingStopped");
                 cube.GetComponent<Renderer>().material.color = Color.white;
                 cube.GetComponent<Cube>().prefabLineRend.SetColors(Color.white, Color.white);
                 foreach (Renderer variableName in cube.GetComponentsInChildren<Renderer>())
@@ -87,13 +89,12 @@ public class Cube : MonoBehaviour
                     variableName.material.color = Color.white;
                 }
             }
-
+            a_halo.SetTrigger("MovingStopped");
             gameObject.tag = "Selected";
             gameObject.GetComponent<Renderer>().material.color = Color.blue;
             gameObject.GetComponent<Cube>().prefabLineRend.SetColors(Color.black, Color.green);
             foreach (Renderer variableName in GetComponentsInChildren<Renderer>())
             {
-                variableName.material.color = Color.blue;
                 variableName.material.color = Color.blue;
             }
         }
