@@ -16,6 +16,7 @@ public class DeplacementFuite : MonoBehaviour
     private Vector3 dernierePos;
     private GameObject plane;
     private GameObject go_gameController;
+    public Animator a_halo;
 
 
     private void Start()
@@ -78,6 +79,7 @@ public class DeplacementFuite : MonoBehaviour
             foreach (GameObject cube in listTag)
             {
                 cube.tag = "Player";
+                cube.GetComponent<DeplacementFuite>().a_halo.SetTrigger("MovingStopped");
                 cube.GetComponent<Renderer>().material.color = Color.white;
                 cube.GetComponent<DeplacementFuite>().prefabLineRender.SetColors(Color.white, Color.white);
                 foreach (Renderer variableName in cube.GetComponentsInChildren<Renderer>())
@@ -85,7 +87,7 @@ public class DeplacementFuite : MonoBehaviour
                     variableName.material.color = Color.white;
                 }
             }
-
+            a_halo.SetTrigger("MovingStopped");
             gameObject.tag = "Selected";
             gameObject.GetComponent<Renderer>().material.color = Color.red;
             gameObject.GetComponent<DeplacementFuite>().prefabLineRender.SetColors(Color.black, Color.green);
@@ -146,10 +148,12 @@ public class DeplacementFuite : MonoBehaviour
             }
             print("touched");
             gameObject.SetActive(false);
-            go_gameController.GetComponent<Phase2Manager>().removeEnemyAlive();
+            if (_collision.gameObject.CompareTag("Despawners"))
+            {
+                go_gameController.GetComponent<Phase2Manager>().addScore();
+            }
+            go_gameController.GetComponent<Phase2Manager>().removeAllieSauve();
         }
-
-
     }
 }
 

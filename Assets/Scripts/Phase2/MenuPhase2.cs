@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class MenuPhase2 : MonoBehaviour
 {
@@ -44,6 +45,7 @@ public class MenuPhase2 : MonoBehaviour
                 blackOutSquare.GetComponent<Image>().color = new Color(blackOutSquare.GetComponent<Image>().color.r, blackOutSquare.GetComponent<Image>().color.g, blackOutSquare.GetComponent<Image>().color.b, 1);
                 yield return new WaitForSeconds(2);
                 go_secondTexte.SetActive(true);
+                GetComponent<Phase2Manager>().tmp_nbrSauve.color = GetComponent<Phase2Manager>().tmp_nbrSauve.color = new Color(255, 255, 255, 0);
             }
             else
             {
@@ -61,6 +63,7 @@ public class MenuPhase2 : MonoBehaviour
                 StopCoroutine(FadeBlackOutSquare(false, 0.01f));
                 blackOutSquare.GetComponent<Image>().color = new Color(blackOutSquare.GetComponent<Image>().color.r, blackOutSquare.GetComponent<Image>().color.g, blackOutSquare.GetComponent<Image>().color.b, 0);
                 yield return new WaitForSeconds(3);
+                GetComponent<Phase2Manager>().tmp_nbrSauve.color = GetComponent<Phase2Manager>().tmp_nbrSauve.color = new Color(255, 255, 255, 1);
             }
             else
             {
