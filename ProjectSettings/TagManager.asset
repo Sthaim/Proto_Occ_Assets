@@ -9,6 +9,10 @@ TagManager:
   - Enemy
   - UI
   - Despawners
+  - Collider
+  - ColliderG1
+  - ColliderG2
+  - ColliderG3
   layers:
   - Default
   - TransparentFX

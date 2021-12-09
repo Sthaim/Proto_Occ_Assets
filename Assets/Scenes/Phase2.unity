@@ -3836,8 +3836,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 28}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: -0.0000038146973}
+  m_SizeDelta: {x: 200, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &764948224
 MonoBehaviour:
@@ -3864,8 +3864,8 @@ MonoBehaviour:
     l'avanc\xE9 des Sarrazins en France et a donn\xE9 assez de temps pour la contre
     attaque des Francs dirig\xE9s par Charles Martel."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6c4f1f5e953e24a42bcc911deb7f8ef8, type: 2}
-  m_sharedMaterial: {fileID: -511463291987086024, guid: 6c4f1f5e953e24a42bcc911deb7f8ef8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e96c0d63cdcd50a40bfdabadf54d274c, type: 2}
+  m_sharedMaterial: {fileID: -607768962032714566, guid: e96c0d63cdcd50a40bfdabadf54d274c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3889,8 +3889,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3901,7 +3901,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -10
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -4548,7 +4548,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.3044414}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000011444092, y: 157.78598}
+  m_AnchoredPosition: {x: -0.000011444092, y: 148.2}
   m_SizeDelta: {x: 312.9877, y: 32.051487}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1036098558
@@ -4571,10 +4571,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: NEW TEXT
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e96c0d63cdcd50a40bfdabadf54d274c, type: 2}
-  m_sharedMaterial: {fileID: -607768962032714566, guid: e96c0d63cdcd50a40bfdabadf54d274c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6c4f1f5e953e24a42bcc911deb7f8ef8, type: 2}
+  m_sharedMaterial: {fileID: -511463291987086024, guid: 6c4f1f5e953e24a42bcc911deb7f8ef8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6572,8 +6572,8 @@ MonoBehaviour:
     avant qu'ils ne soient tous morts. Avant de fuire, ils avaient quand m\xEAme
     essay\xE9 de ce battre."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6c4f1f5e953e24a42bcc911deb7f8ef8, type: 2}
-  m_sharedMaterial: {fileID: -511463291987086024, guid: 6c4f1f5e953e24a42bcc911deb7f8ef8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e96c0d63cdcd50a40bfdabadf54d274c, type: 2}
+  m_sharedMaterial: {fileID: -607768962032714566, guid: e96c0d63cdcd50a40bfdabadf54d274c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

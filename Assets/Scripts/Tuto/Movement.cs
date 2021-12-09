@@ -19,6 +19,7 @@ public class Movement : MonoBehaviour
     private GameObject plane;
     private GameObject UI;
     public GameObject go_hand;
+    public GameObject go_logoTroupe;
 
     // Start is called before the first frame update
     void Start()
@@ -39,11 +40,13 @@ public class Movement : MonoBehaviour
             gameObject.tag = "Selected";
             gameObject.GetComponent<Renderer>().material.color = Color.blue;
             gameObject.GetComponent<Movement>().prefabLineRend.SetColors(Color.black, Color.green);
+            
             foreach (Renderer variableName in GetComponentsInChildren<Renderer>())
             {
                 variableName.material.color = Color.blue;
-                variableName.material.color = Color.blue;
+                
             }
+            go_logoTroupe.GetComponent<MeshRenderer>().material.color = Color.white;
             if (premierTexte == false)
             {
                 UI.GetComponent<Menu1>().DelayText(UI.GetComponent<Menu1>().myTextMeshTop, 0.01f, 0, false);
