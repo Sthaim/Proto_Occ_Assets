@@ -14,6 +14,8 @@ public class DéplacementSol : MonoBehaviour
 
     private int nbrIteration;
 
+    Vector3 lastHit = new Vector3();
+
 
     void Start()
     {
@@ -77,15 +79,41 @@ public class DéplacementSol : MonoBehaviour
     {
         RaycastHit[] hits;
         hits = Physics.RaycastAll(GetMouseWorldPos().origin, GetMouseWorldPos().direction, 100000f);
+        bool Plane = false;
+        bool Collide = false;
+
         for (int i = 0; i < hits.Length; i++)
         {
-            if (hits[i].collider != null && hits[i].collider.tag == "Plane")
+            Debug.Log("Last Hit: " + lastHit);
+            if (hits[i].collider != null && hits[i].collider.tag == "Plane" && lastHit != hits[i].point)
             {
-                GameObject go = Instantiate(spawnobj, hits[i].point, Quaternion.identity);
-                selectedFuite.addWaypoint(go);
-                nbrIteration++;
-                selectedFuite.UpdateIteration(nbrIteration);
+                lastHit = hits[i].point;
+                Plane = true;
             }
+            else if (hits[i].collider != null && hits[i].collider.tag == "Collider")
+            {
+                Collide = true;
+            }
+            else if (hits[i].collider != null && hits[i].collider.tag == "ColliderG1" && selectedFuite.transform.parent.name == "SoldatD")
+            {
+                Collide = true;
+            }
+            else if (hits[i].collider != null && hits[i].collider.tag == "ColliderG2" && selectedFuite.transform.parent.name == "SoldatSud")
+            {
+                Collide = true;
+            }
+            else if (hits[i].collider != null && hits[i].collider.tag == "ColliderG3" && selectedFuite.transform.parent.name == "SoldatG")
+            {
+                Collide = true;
+            }
+        }
+        if (Plane && !Collide)
+        {
+            nbrIteration++;
+            selectedFuite.UpdateIteration(nbrIteration);
+            GameObject go = Instantiate(spawnobj, lastHit, Quaternion.identity);
+            selectedFuite.addWaypoint(go);
+
         }
 
         yield return new WaitForSeconds(0.5f);
@@ -96,18 +124,28 @@ public class DéplacementSol : MonoBehaviour
         RaycastHit[] hits;
         hits = Physics.RaycastAll(GetMouseWorldPos().origin, GetMouseWorldPos().direction, 100000f);
 
+        bool Plane = false;
+        bool Collision = false;
+
         for (int i = 0; i < hits.Length; i++)
         {
-            if (hits[0].collider != null && hits[0].collider.tag == "Plane")
+            if (hits[i].collider != null && hits[i].collider.tag == "Plane")
             {
-                nbrIteration++;
-                selectedFuite.UpdateIteration(nbrIteration);
+                /*nbrIteration++;
+                selectedCube.UpdateIteration(nbrIteration);*/
 
-
-
-                GameObject go = Instantiate(spawnobj, hits[0].point, Quaternion.identity);
-                selectedFuite.addWaypoint(go);
+                Plane = true;
             }
+            else if (hits[i].collider != null && hits[i].collider.tag == "Collider")
+            {
+                Collision = true;
+            }
+        }
+
+        if (Plane && !Collision)
+        {
+            GameObject go = Instantiate(spawnobj, hits[0].point, Quaternion.identity);
+            selectedFuite.addWaypoint(go);
         }
     }
 

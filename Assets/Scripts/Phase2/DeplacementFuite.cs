@@ -116,24 +116,26 @@ public class DeplacementFuite : MonoBehaviour
 
     public void removeWaypoint(int index)
     {
-
         dernierCount = Waypoint.Count;
-        Vector3[] newPositions = new Vector3[prefabLineRender.positionCount - 1];
-
-        for (int i = 0; i < index; i++)
+        if (dernierCount > 0)
         {
-            newPositions[i] = prefabLineRender.GetPosition(i);
-        }
-        for (int i = index; i < newPositions.Length; i++)
-        {
-            newPositions[i] = prefabLineRender.GetPosition(i + 1);
-        }
-        prefabLineRender.positionCount = newPositions.Length;
-        prefabLineRender.SetPositions(newPositions);
+            Vector3[] newPositions = new Vector3[prefabLineRender.positionCount - 1];
 
-        Waypoint[index].SetActive(false);
-        Destroy(Waypoint[index]);
-        Waypoint.RemoveAt(index);
+            for (int i = 0; i < index; i++)
+            {
+                newPositions[i] = prefabLineRender.GetPosition(i);
+            }
+            for (int i = index; i < newPositions.Length - 1; i++)
+            {
+                newPositions[i] = prefabLineRender.GetPosition(i + 1);
+            }
+            prefabLineRender.positionCount = newPositions.Length;
+            prefabLineRender.SetPositions(newPositions);
+
+            Waypoint[index].SetActive(false);
+            Destroy(Waypoint[index]);
+            Waypoint.RemoveAt(index);
+        }
     }
 
 

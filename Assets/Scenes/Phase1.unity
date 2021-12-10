@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 5991ef34c53c6d7448690abc46458723, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: c62506248e1f0894d9e3ade198133c9d, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -4982,7 +4982,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &693667768
 BoxCollider:
@@ -7795,7 +7795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5749831110579721388, guid: 689fe4c37e80b74438b67be3a80ab2d7, type: 3}
       propertyPath: "tempsDeD\xE9part"
-      value: 2
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 5749831110579721388, guid: 689fe4c37e80b74438b67be3a80ab2d7, type: 3}
       propertyPath: WaypointsEnemy1.Array.data[0]
@@ -8474,7 +8474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5749831110579721388, guid: 689fe4c37e80b74438b67be3a80ab2d7, type: 3}
       propertyPath: "tempsDeD\xE9part"
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5749831110579721388, guid: 689fe4c37e80b74438b67be3a80ab2d7, type: 3}
       propertyPath: WaypointsEnemy2.Array.size
@@ -9288,7 +9288,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &1512316022
 BoxCollider:
@@ -9461,7 +9461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5749831110579721388, guid: 689fe4c37e80b74438b67be3a80ab2d7, type: 3}
       propertyPath: "tempsDeD\xE9part"
-      value: 2
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5749831110579721388, guid: 689fe4c37e80b74438b67be3a80ab2d7, type: 3}
       propertyPath: WaypointsEnemy1.Array.data[0]
@@ -9841,7 +9841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5749831110579721388, guid: 689fe4c37e80b74438b67be3a80ab2d7, type: 3}
       propertyPath: "tempsDeD\xE9part"
-      value: 2
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5749831110579721388, guid: 689fe4c37e80b74438b67be3a80ab2d7, type: 3}
       propertyPath: WaypointsEnemy1.Array.data[0]
@@ -10727,7 +10727,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5749831110579721388, guid: 689fe4c37e80b74438b67be3a80ab2d7, type: 3}
       propertyPath: "tempsDeD\xE9part"
-      value: 2
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5749831110579721388, guid: 689fe4c37e80b74438b67be3a80ab2d7, type: 3}
       propertyPath: WaypointsEnemy1.Array.size
@@ -11028,7 +11028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5749831110579721388, guid: 689fe4c37e80b74438b67be3a80ab2d7, type: 3}
       propertyPath: "tempsDeD\xE9part"
-      value: 2
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5749831110579721388, guid: 689fe4c37e80b74438b67be3a80ab2d7, type: 3}
       propertyPath: WaypointsEnemy1.Array.size
@@ -11916,7 +11916,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &1997318879
 BoxCollider:
@@ -13079,7 +13079,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5749831110579721388, guid: 689fe4c37e80b74438b67be3a80ab2d7, type: 3}
       propertyPath: "tempsDeD\xE9part"
-      value: 2
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 5749831110579721388, guid: 689fe4c37e80b74438b67be3a80ab2d7, type: 3}
       propertyPath: WaypointsEnemy1.Array.data[0]
