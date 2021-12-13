@@ -82,20 +82,26 @@ public class Cube : MonoBehaviour
             {
                 cube.tag = "Untagged";
                 cube.GetComponent<Cube>().a_halo.SetTrigger("MovingStopped");
-                cube.GetComponent<Renderer>().material.color = Color.white;
+/*                cube.GetComponent<Renderer>().material.color = Color.white;*/
                 cube.GetComponent<Cube>().prefabLineRend.SetColors(Color.white, Color.white);
                 foreach (Renderer variableName in cube.GetComponentsInChildren<Renderer>())
                 {
-                    variableName.material.color = Color.white;
+                    if (variableName.gameObject.CompareTag("Halo"))
+                    {
+                        variableName.material.color = Color.white;
+                    }
                 }
             }
             a_halo.SetTrigger("MovingStopped");
             gameObject.tag = "Selected";
-            gameObject.GetComponent<Renderer>().material.color = Color.blue;
+/*            gameObject.GetComponent<Renderer>().material.color = Color.blue;*/
             gameObject.GetComponent<Cube>().prefabLineRend.SetColors(Color.black, Color.green);
             foreach (Renderer variableName in GetComponentsInChildren<Renderer>())
             {
-                variableName.material.color = Color.blue;
+                if (variableName.gameObject.CompareTag("Halo"))
+                {
+                    variableName.material.color = Color.blue;
+                }
             }
         }
     }

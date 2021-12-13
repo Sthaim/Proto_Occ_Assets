@@ -35,10 +35,10 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 0
+  m_ReflectionIntensity: 0.113
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0}
+  m_IndirectSpecularColor: {r: 0.12095513, g: 0.12539074, b: 0.11881777, a: 0.113}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -546,15 +546,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.21007745
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2100775
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.21007745
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1017,7 +1017,7 @@ GameObject:
   - component: {fileID: 84285749}
   m_Layer: 0
   m_Name: Halo (4)
-  m_TagString: Untagged
+  m_TagString: Halo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1133,15 +1133,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.21007745
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2100775
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.21007745
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3222,15 +3222,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.21007745
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2100775
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.21007745
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4653,15 +4653,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.21007745
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2100775
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.21007745
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6472,7 +6472,7 @@ GameObject:
   - component: {fileID: 747864429}
   m_Layer: 0
   m_Name: Halo (3)
-  m_TagString: Untagged
+  m_TagString: Halo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6714,8 +6714,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8439,15 +8439,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.21007745
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2100775
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.21007745
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8749,15 +8749,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.21007745
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2100775
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.21007745
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9684,11 +9684,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 69c760689bcc8664f8006832178847d0, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.25
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 69c760689bcc8664f8006832178847d0, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.25
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 69c760689bcc8664f8006832178847d0, type: 3}
       propertyPath: m_LocalScale.z
@@ -10065,7 +10065,7 @@ GameObject:
   - component: {fileID: 1225690408}
   m_Layer: 0
   m_Name: Halo (1)
-  m_TagString: Untagged
+  m_TagString: Halo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11022,15 +11022,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.21007745
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2100775
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.21007745
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11247,15 +11247,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.21007745
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2100775
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.21007745
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12269,7 +12269,7 @@ GameObject:
   - component: {fileID: 1456254310}
   m_Layer: 0
   m_Name: Halo (5)
-  m_TagString: Untagged
+  m_TagString: Halo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12496,6 +12496,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1756079077}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1548057686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12548,7 +12560,7 @@ GameObject:
   - component: {fileID: 1553956667}
   m_Layer: 0
   m_Name: Halo (7)
-  m_TagString: Untagged
+  m_TagString: Halo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12990,7 +13002,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1598541142}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1756079077}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1598541142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13273,15 +13297,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.21007745
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2100775
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.21007745
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13864,15 +13888,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.21007745
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2100775
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.21007745
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14318,6 +14342,7 @@ GameObject:
   - component: {fileID: 1756079074}
   - component: {fileID: 1756079073}
   - component: {fileID: 1756079076}
+  - component: {fileID: 1756079077}
   m_Layer: 0
   m_Name: GameManager (1)
   m_TagString: GameController
@@ -14380,6 +14405,20 @@ MonoBehaviour:
   go_menu: {fileID: 1756079072}
   tmp_nbrSauve: {fileID: 692056302}
   tmp_nbrScore: {fileID: 1036098558}
+--- !u!114 &1756079077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756079072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec5e216132b38cb4f8465b377ccb745c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 17f4b385b5c95ab41b2c911d9a6f7f50, type: 3}
 --- !u!1001 &1768079869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14598,7 +14637,7 @@ GameObject:
   - component: {fileID: 1774047731}
   m_Layer: 0
   m_Name: Halo (2)
-  m_TagString: Untagged
+  m_TagString: Halo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14864,15 +14903,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.21007745
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2100775
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.21007745
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15959,7 +15998,7 @@ GameObject:
   - component: {fileID: 1941196003}
   m_Layer: 0
   m_Name: Halo (6)
-  m_TagString: Untagged
+  m_TagString: Halo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16744,15 +16783,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.21007745
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2100775
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.21007745
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2006490233264249035, guid: a3c29f989f0e019448fb0d9cb49ff4ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17297,6 +17336,18 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.78
       objectReference: {fileID: 0}
@@ -17364,6 +17415,18 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.04
       objectReference: {fileID: 0}
@@ -17429,6 +17492,18 @@ PrefabInstance:
     - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17518,6 +17593,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.96
       objectReference: {fileID: 0}
@@ -17590,6 +17677,18 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.35
       objectReference: {fileID: 0}
@@ -17657,6 +17756,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.47
       objectReference: {fileID: 0}
@@ -17722,6 +17833,18 @@ PrefabInstance:
     - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8503416003608871200, guid: e075bc9b9cba1ed47bbdf0e4dc89efda, type: 3}
       propertyPath: m_LocalPosition.x

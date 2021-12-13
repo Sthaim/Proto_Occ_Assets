@@ -84,7 +84,10 @@ public class DeplacementFuite : MonoBehaviour
                 cube.GetComponent<DeplacementFuite>().prefabLineRender.SetColors(Color.white, Color.white);
                 foreach (Renderer variableName in cube.GetComponentsInChildren<Renderer>())
                 {
-                    variableName.material.color = Color.white;
+                    if (variableName.gameObject.CompareTag("Halo"))
+                    {
+                        variableName.material.color = Color.white;
+                    }
                 }
             }
             a_halo.SetTrigger("MovingStopped");
@@ -93,7 +96,10 @@ public class DeplacementFuite : MonoBehaviour
             gameObject.GetComponent<DeplacementFuite>().prefabLineRender.SetColors(Color.black, Color.green);
             foreach (Renderer variableName in GetComponentsInChildren<Renderer>())
             {
-                variableName.material.color = Color.red;
+                if (variableName.gameObject.CompareTag("Halo"))
+                {
+                    variableName.material.color = Color.red;
+                }
             }
         }
     }
@@ -153,6 +159,10 @@ public class DeplacementFuite : MonoBehaviour
             if (_collision.gameObject.CompareTag("Despawners"))
             {
                 go_gameController.GetComponent<Phase2Manager>().addScore();
+            }
+            else
+            {
+                
             }
             go_gameController.GetComponent<Phase2Manager>().removeAllieSauve();
         }

@@ -13,6 +13,7 @@ TagManager:
   - ColliderG1
   - ColliderG2
   - ColliderG3
+  - Halo
   layers:
   - Default
   - TransparentFX
