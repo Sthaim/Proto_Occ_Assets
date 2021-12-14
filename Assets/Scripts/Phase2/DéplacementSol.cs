@@ -34,7 +34,7 @@ public class DéplacementSol : MonoBehaviour
         {
             selectedFuite = listTag[0].GetComponent<DeplacementFuite>();
             listCube = selectedFuite.GetComponent<DeplacementFuite>().Waypoint;
-            InvokeRepeating("Coroutine", 0F, 0.1F);
+            InvokeRepeating("Coroutine", 0F, 0.05F);
         }
 
     }

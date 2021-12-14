@@ -72,7 +72,6 @@ public class DeplacementFuite : MonoBehaviour
 
     private void OnMouseDown()
     {
-        plane.GetComponent<DéplacementSol>().callOnMouseDown();
         if (gameObject.CompareTag("Player"))
         {
             listTag = GameObject.FindGameObjectsWithTag("Selected");
@@ -102,6 +101,7 @@ public class DeplacementFuite : MonoBehaviour
                 }
             }
         }
+        plane.GetComponent<DéplacementSol>().callOnMouseDown();
     }
 
     private void OnMouseUp()

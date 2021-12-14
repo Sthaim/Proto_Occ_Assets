@@ -16,7 +16,7 @@ public class Phase1Manager : MonoBehaviour
     {
         n_nbrScore = 0; 
         n_enemyAlive = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        tmp_nbrEnemy.text = n_enemyAlive.ToString();
+        tmp_nbrEnemy.text = n_enemyAlive.ToString() + " Omeyyades restants";
         tmp_nbrEnemy.color = new Color(255, 255, 255, 0);
 
     }
@@ -25,7 +25,7 @@ public class Phase1Manager : MonoBehaviour
     {
         n_enemyAlive--;
         print("getting hit" + n_enemyAlive);
-        tmp_nbrEnemy.text = n_enemyAlive.ToString();
+        tmp_nbrEnemy.text = n_enemyAlive.ToString() + " Omeyyades restants";
     }
 
     public void addScore()

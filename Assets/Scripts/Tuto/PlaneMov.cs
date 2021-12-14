@@ -34,7 +34,7 @@ public class PlaneMov : MonoBehaviour
         {
             selectedCube = listTag[0].GetComponent<Movement>();
             listCube = selectedCube.GetComponent<Movement>().Waypoint;
-            InvokeRepeating("Coroutine", 0F, 0.1F);
+            InvokeRepeating("Coroutine", 0F, 0.05F);
         }
 
     }

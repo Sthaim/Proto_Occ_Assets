@@ -33,7 +33,7 @@ public class Movement : MonoBehaviour
 
     private void OnMouseDown()
     {
-        plane.GetComponent<PlaneMov>().callOnMouseDown();
+        
         if (gameObject.CompareTag("Untagged") && UI.GetComponent<Menu1>().finishedAppear==true)
         {
 
@@ -63,6 +63,7 @@ public class Movement : MonoBehaviour
             /*UI.GetComponent<Menu1>().SetTextOnTMP(UI.GetComponent<Menu1>().myTextMeshBottom, Menu1.Positions.BOTTOM);
             UI.GetComponent<Menu1>().DelayText(UI.GetComponent<Menu1>().myTextMeshBottom, 0.01f, 1, true);*/
         }
+        plane.GetComponent<PlaneMov>().callOnMouseDown();
     }
 
     private void OnMouseUp()

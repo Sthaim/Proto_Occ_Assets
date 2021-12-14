@@ -42,7 +42,7 @@ public class Cube : MonoBehaviour
             }
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, offsetPos, Time.deltaTime * 1f);
 
-            if (gameObject.transform.position== dernierePos)
+            if (gameObject.transform.position == dernierePos)
             {
                 moving = false;
             }
@@ -74,7 +74,7 @@ public class Cube : MonoBehaviour
 
     private void OnMouseDown()
     {
-        plane.GetComponent<MoveObject>().callOnMouseDown();
+        
         if (gameObject.CompareTag("Untagged"))
         {
             listTag = GameObject.FindGameObjectsWithTag("Selected");
@@ -104,6 +104,7 @@ public class Cube : MonoBehaviour
                 }
             }
         }
+        plane.GetComponent<MoveObject>().callOnMouseDown();
     }
 
     private void OnMouseUp()

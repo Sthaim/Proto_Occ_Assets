@@ -85,6 +85,7 @@ public class Menu1 : MonoBehaviour
                 go_hand.GetComponent<HandMovement>().handAppear();
                 go_hand.GetComponent<HandMovement>().handSelect();
             }
+
         }
     }
 
