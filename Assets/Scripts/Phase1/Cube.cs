@@ -157,6 +157,7 @@ public class Cube : MonoBehaviour
             _collision.gameObject.SetActive(false);
             go_gameController.GetComponent<Phase1Manager>().removeEnemyAlive();
             go_gameController.GetComponent<Phase1Manager>().addScore();
+            go_gameController.GetComponent<SoundManager>().PlaySound(2);
         }
     }
 }

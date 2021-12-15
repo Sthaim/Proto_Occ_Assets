@@ -18,6 +18,7 @@ public class Phase1Manager : MonoBehaviour
         n_enemyAlive = GameObject.FindGameObjectsWithTag("Enemy").Length;
         tmp_nbrEnemy.text = n_enemyAlive.ToString() + " Omeyyades restants";
         tmp_nbrEnemy.color = new Color(255, 255, 255, 0);
+        
 
     }
 

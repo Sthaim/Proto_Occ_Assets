@@ -63,6 +63,7 @@ public class Menu : MonoBehaviour
                 blackOutSquare.GetComponent<Image>().color = new Color(blackOutSquare.GetComponent<Image>().color.r, blackOutSquare.GetComponent<Image>().color.g, blackOutSquare.GetComponent<Image>().color.b, 0);
                 yield return new WaitForSeconds(3);
                 GetComponent<Phase1Manager>().tmp_nbrEnemy.color = GetComponent<Phase1Manager>().tmp_nbrEnemy.color = new Color(255, 255, 255, 1);
+                gameObject.GetComponent<SoundManager>().PlaySound(1);
             }
             else
             {

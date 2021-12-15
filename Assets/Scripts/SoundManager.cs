@@ -7,17 +7,28 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     List<AudioClip> audioClips;
 
-    AudioSource audioSource;
+    List<AudioSource> audioSource=new List<AudioSource>(0);
+
+    [SerializeField]
+    GameObject Pref;
 
     void Start()
     {
-        audioSource = gameObject.AddComponent<AudioSource>();
+        for(int i=0; i < audioClips.Count; i++)
+        {
+            AudioSource audio = Instantiate<GameObject>(Pref).AddComponent<AudioSource>();
+
+            print("Audio " + i + ":" + audio);
+            audioSource.Add(audio);
+            audioSource[i].clip = audioClips[i];
+        }
+        
+
     }
 
     public void PlaySound (int _indexSound)
     {
-        audioSource.clip = audioClips[_indexSound];
-        audioSource.Play();
+        audioSource[index: _indexSound].Play();
     }
 
     // Update is called once per frame
