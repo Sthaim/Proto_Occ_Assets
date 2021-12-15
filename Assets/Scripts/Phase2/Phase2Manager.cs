@@ -17,7 +17,7 @@ public class Phase2Manager : MonoBehaviour
     {
         n_nbrScore = 0;
         n_SauveAllie = GameObject.FindGameObjectsWithTag("Player").Length;
-        tmp_nbrSauve.text = n_SauveAllie.ToString() + " allie restant";
+        tmp_nbrSauve.text = n_SauveAllie.ToString() + " allie restant" + "\n" + n_nbrScore.ToString() + " allie Sauvé";
         tmp_nbrSauve.color = new Color(255, 255, 255, 0);
     }
 
@@ -25,7 +25,7 @@ public class Phase2Manager : MonoBehaviour
     {
         n_SauveAllie--;
         print("getting hit" + n_SauveAllie);
-        tmp_nbrSauve.text = n_SauveAllie.ToString() + " allie restant";
+        tmp_nbrSauve.text = n_SauveAllie.ToString() + " allie restant" + "\n" + n_nbrScore.ToString() + " allie sauvé";
     }
 
     public void addScore()
