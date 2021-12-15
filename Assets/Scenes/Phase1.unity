@@ -3964,6 +3964,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 17f4b385b5c95ab41b2c911d9a6f7f50, type: 3}
   - {fileID: 8300000, guid: 6023d5be2621f0c49b185c10a0ab9b25, type: 3}
   - {fileID: 8300000, guid: ba29170cd4f2ae946b3fca9549b00ab8, type: 3}
+  - {fileID: 8300000, guid: 658357c201c9f944ea333898d54cddbf, type: 3}
   Pref: {fileID: 539711085}
 --- !u!1001 &489007113
 PrefabInstance:

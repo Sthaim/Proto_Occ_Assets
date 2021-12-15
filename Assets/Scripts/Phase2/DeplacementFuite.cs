@@ -100,6 +100,7 @@ public class DeplacementFuite : MonoBehaviour
                     variableName.material.color = Color.red;
                 }
             }
+            go_gameController.GetComponent<SoundManager>().PlaySound(2);
         }
         plane.GetComponent<DéplacementSol>().callOnMouseDown();
     }

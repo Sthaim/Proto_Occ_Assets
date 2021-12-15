@@ -103,6 +103,7 @@ public class Cube : MonoBehaviour
                     variableName.material.color = Color.blue;
                 }
             }
+            go_gameController.GetComponent<SoundManager>().PlaySound(3);
         }
         plane.GetComponent<MoveObject>().callOnMouseDown();
     }
